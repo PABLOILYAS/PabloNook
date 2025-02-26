@@ -833,3 +833,16 @@ pre {
     background-color: #515f6cbb;
     border-color: #1f2933;
 }
+
+.server-page {
+    background-image: url('/background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.admin-page {
+    background-image: url('/background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
