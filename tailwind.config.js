@@ -1,3 +1,4 @@
+// All Credit Goes to Nook Theme , Modified by pabloilyas
 const colors = require('tailwindcss/colors');
 
 const gray = {
@@ -13,6 +14,20 @@ const gray = {
     900: colors.neutral[900],
 };
 
+const purple = {
+    50: "#f5e1ff",
+    100: "#e9c2ff",
+    200: "#d78cff",
+    300: "#c555ff",
+    400: "#a633e5",
+    500: "#8c1bc8",
+    600: "#720ea3",
+    700: "#59097e",
+    800: "#42065b",
+    900: "#2c0339",
+    950: "#1a0121",
+};
+
 module.exports = {
     content: [
         './resources/scripts/**/*.{js,ts,tsx}',
@@ -20,14 +35,12 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                header: ['"IBM Plex Sans"', '"Roboto"', 'system-ui', 'sans-serif'],
+                header: ['"Inter"', 'system-ui', 'sans-serif'],
             },
             colors: {
                 black: '#131a20',
-                // "primary" and "neutral" are deprecated, prefer the use of "blue" and "gray"
-                // in new code.
-                primary: colors.blue,
-                orange: colors.orange,
+                primary: purple,
+                orange: purple, // Replacing orange with purple
                 gray: gray,
                 neutral: gray,
                 cyan: colors.cyan,
