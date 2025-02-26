@@ -1,58 +1,48 @@
-/*
-This file is part of NookTheme.
-
-NookTheme is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-NookTheme is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with NookTheme. If not, see <https://www.gnu.org/licenses/>.
-*/
-
+/*All Credits Goes to Nook Theme Modified by pabloilyas*/
 :root {
-    --color-primary: #212121;
-    --color-secondary: #3a3636;
-    --color-tertiary: #17171b;
-    --color-quaternary: #757575;
-    --color-quinary: #9e9e9e;
-    --button-color: #212121;
-    --button-color-hover: #424242;
-    --button-color-active: #c72510;
-    --button-color-disabled: #757575;
-    --button-color-text: #9e9e9e;
-    --text-main: #ffffff;
-    --text-secondary: #ffffff;
-    --text-tertiary: #ffffff;
-    --background-color: #212121;
+    --color-primary: #2A1E38; /* Deep Purple */
+    --color-secondary: #1F162B; /* Darker Purple */
+    --color-tertiary: #140D21; /* Very Dark Purple */
+    --color-quaternary: #8B5CF6; /* Neon Purple */
+    --color-quinary: #A855F7; /* Lighter Purple */
+    --button-color: #8B5CF6; /* Neon Purple */
+    --button-color-hover: #7C3AED; /* Darker Neon */
+    --button-color-active: #A855F7; /* Lighter Purple */
+    --button-color-disabled: #6B7280; /* Muted Gray */
+    --button-color-text: #ffffff; /* White */
+    --text-main: #ffffff; /* White */
+    --text-secondary: #D1D5DB; /* Light Gray */
+    --text-tertiary: #A1A1AA; /* Muted Gray */
+    --background-color: #140D21; /* Dark Purple */
     --invert: 1000;
     --sidebar-button-color: white;
-    --sidebar-button-color-hover: #0e0e1d;
-    --card-bg: #353535;
+    --sidebar-button-color-hover: #6D28D9; /* Deep Purple */
+    --card-bg: #1F162B; /* Darker Purple */
 }
 
 :root {
-    --sidebar-size: 220px;
+    --sidebar-size: 240px;
 }
+
+/* Navbar */
 .nav-bar {
     display: none;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     margin: 0;
-    padding: 0;
-    width: var(--sidebar-size);
-    background-color: var(--color-tertiary);
     overflow: auto;
     z-index: 9999;
     height: calc(100vh - 3.5rem);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Content */
 .content-container {
     margin-left: calc(var(--sidebar-size) + 40px);
     margin-right: 40px;
-}
-
-.content-dashboard {
     max-width: 1200px;
 }
 
@@ -66,6 +56,8 @@ You should have received a copy of the GNU General Public License along with Noo
     color: var(--sidebar-button-color);
     padding: 16px;
     text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
 }
 
 /* Active/current link */
@@ -74,113 +66,60 @@ You should have received a copy of the GNU General Public License along with Noo
     color: white;
 }
 
+/* Sidebar Layout */
 .sidebar > a {
     display: flex;
     text-align: center;
     align-items: center;
 }
 
+/* Sidebar Icons */
 .icon {
     border-radius: 30%;
     width: 45px;
     height: 45px;
-    text-align: center;
-    background-size: 100px;
-    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--button-color);
     color: var(--button-color-text);
     margin-right: 10px;
+    transition: all 0.2s ease-in-out;
 }
 
-.sidebar > a > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.icon:hover {
+    background-color: var(--button-color-hover);
 }
 
-/* Links on mouse-over */
+/* Sidebar Hover */
 .sidebar a:hover:not(.active) > .icon {
     background-color: var(--sidebar-button-color-hover);
 }
 
-.icon {
-    transition: all 0.2s ease-in-out;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+/* Page Content */
 div.content {
     margin-left: var(--sidebar-size);
     padding: 1px 16px;
     height: 1000px;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 1150px) {
     .sidebar {
         position: fixed;
-        width: 100%;
-        left: -1150px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .content-container {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-
-    div.content {
-        margin-left: 0;
-        padding: 1px 16px;
-        height: 1000px;
-    }
-
-    .active-nav {
-        left: 0;
-        margin-right: var(--sidebar-size);
-        width: var(--sidebar-size);
-        height: calc(100vh - 3.5rem);
-    }
-
-    .nav-bar {
-        display: flex;
-    }
-
-    .navbar-button {
-        display: inline;
-        font-size: 1.5rem;
-        margin-left: 1rem;
-        cursor: pointer;
     }
 }
 
+/* User Avatar */
 .avatar {
     margin: 10px;
     width: 200px;
     height: 200px;
     border-radius: 5%;
+    border: 2px solid var(--color-quaternary);
 }
 
-.smallAvatar {
-    width: 70px;
-    border-radius: 50%;
-}
-
-.nav-bar > * {
-    margin: 10px;
-}
-
-.left {
-    margin-left: auto;
-}
-
-.openMenu {
-    font-size: 50px;
-}
-
-.openMenu:hover {
-    cursor: pointer;
-}
-
+/* Topbar */
 .topbar {
     position: sticky;
     margin-top: 0 !important;
